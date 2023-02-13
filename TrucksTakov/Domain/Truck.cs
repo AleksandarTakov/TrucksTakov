@@ -12,6 +12,8 @@ namespace TrucksTakov.Domain
         [Required]
         public int ManufacturerId { get; set; }
         public virtual Manufacturer Manufacturer { get; set; }
+        [Required]
+        public string Model {get; set; }
 
         [Required]
         public int CategoryId { get; set; }
