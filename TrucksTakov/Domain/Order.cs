@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System;
-using TakovTrucks.Domain;
+using TrucksTakov.Domain;
 
 namespace TrucksTakov.Domain
 {
