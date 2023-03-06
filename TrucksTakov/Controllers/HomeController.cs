@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 using TrucksTakov.Models;
 
-namespace TorrichelliGlasses.Controllers
+namespace TrucksTakov.Controllers
 {
     public class HomeController : Controller
     {

@@ -12,7 +12,7 @@ using TrucksTakov.Data;
 using TrucksTakov.Domain;
 using TrucksTakov.Models.Order;
 
-namespace TorrichelliGlasses.Controllers
+namespace TrucksTakov.Controllers
 {
     [Authorize(Roles = "Administrator")]
     public class OrderController : Controller
