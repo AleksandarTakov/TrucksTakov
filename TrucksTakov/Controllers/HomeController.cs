@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+
 using TrucksTakov.Models;
 
-namespace TrucksTakov.Controllers
+namespace TorrichelliGlasses.Controllers
 {
     public class HomeController : Controller
     {
@@ -24,6 +25,16 @@ namespace TrucksTakov.Controllers
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult Contacts()
+        {
+            return View();
+        }
+
+        public IActionResult ForUs()
         {
             return View();
         }

@@ -13,6 +13,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using TrucksTakov.Data;
 using TrucksTakov.Domain;
+using TrucksTakov.Infrastructure;
+using static TrucksTakov.Abstraction.IManufacturerService;
+using TrucksTakov.Services;
+using TrucksTakov.Abstraction;
 
 namespace TrucksTakov
 {
@@ -44,6 +48,10 @@ namespace TrucksTakov
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+            services.AddTransient<ITruckService,TruckService>();
+            services.AddTransient<ICategoryService,CategoryService>();
+            services.AddTransient<IManufacturerService,ManufacturerService>();
+           
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.Configure<IdentityOptions>(option =>
@@ -61,6 +69,7 @@ namespace TrucksTakov
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+             app.PrepareDatabase();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
