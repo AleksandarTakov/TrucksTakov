@@ -4562,7 +4562,7 @@ jQuery.extend( {
 			type = ( type || "fx" ) + "queue";
 			queue = dataPriv.get( elem, type );
 
-			// Speed up dequeue by getting out quickly if this is just a looku
+			// Speed up dequeue by getting out quickly if this is just a lookup
 			if ( data ) {
 				if ( !queue || Array.isArray( data ) ) {
 					queue = dataPriv.access( elem, type, jQuery.makeArray( data ) );
