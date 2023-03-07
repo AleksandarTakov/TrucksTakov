@@ -78,8 +78,8 @@ namespace TrucksTakov.Infrastructure
                 new Category{CategoryName="Dumper"},
                 new Category{CategoryName="Road assistance"},
                 new Category{CategoryName="Тug"},
-                new Category{CategoryName="Refrigerator truck"},
-                new Category{CategoryName="Tank Truc"},
+                new Category{CategoryName="Refrigerator Truck"},
+                new Category{CategoryName="Tank Truck"},
                 new Category{CategoryName="Accessory"},
                 
             });
