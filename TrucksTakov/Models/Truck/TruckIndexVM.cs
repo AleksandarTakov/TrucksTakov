@@ -38,6 +38,6 @@ namespace TrucksTakov.Models.Truck
         [Display(Name = "Description")]
         public string Description { get; set; }
         [Display(Name = "Discount")]
-        public decimal Discount { get; set; }
+        public decimal  Discount { get; set; }
     }
 }

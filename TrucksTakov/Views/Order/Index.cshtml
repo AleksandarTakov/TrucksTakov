@@ -13,42 +13,31 @@
 <table class="table">
     <thead>
         <tr>
-            <th >
+            <th>
                 @Html.DisplayNameFor(model => model.OrderDate)
             </th>
             @*<th>
             @Html.DisplayNameFor(model => model.UserId)
             </th>*@
-            <th >
-                
+            <th>
                 @Html.DisplayNameFor(model => model.User)
             </th>
             @*<th>
             @Html.DisplayNameFor(model => model.ProductId)
             </th>*@
-            <th >
-                
-                @Html.DisplayNameFor(model => model.Truck)
+           @* <th>
+                @Html.DisplayNameFor(model => model.Product)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
             </th>
-            <th >
-                @Html.DisplayNameFor(model => model.Truck)
-            </th>
-            <th >
-                
-                @Html.DisplayNameFor(model => model.Model)
-            </th>
-            <th >
-                
+            <th>
                 @Html.DisplayNameFor(model => model.Quantity)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Price)
             </th>
-            <th scope="row">
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th scope="row">
-                
+            <th>
                 @Html.DisplayNameFor(model => model.Discount)
             </th>
             <th>
@@ -73,9 +62,9 @@
                 @*<td>
             @Html.DisplayFor(modelItem => item.ProductId)
             </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.Truck)
-                </td>
+               @* <td>
+                    @Html.DisplayFor(modelItem => item.Product)
+                </td>*@
                 <td>
                     <img src="@Html.DisplayFor(modelItem => item.Image)" alt="Image" width="100" />
                 </td>

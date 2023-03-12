@@ -29,43 +29,55 @@
         <tr>
            
             <th>
-                @Html.DisplayNameFor(model => model.ManufacturerName)
+              @*  @Html.DisplayNameFor(model => model.ManufacturerName)*@
+              MName
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Model)
+                @*@Html.DisplayNameFor(model => model.Model)
+                 Model*@
+                 Mod
             </th>
             @*<th>
                 @Html.DisplayNameFor(model => model.CategoryId)
             </th>*@
             <th>
-                @Html.DisplayNameFor(model => model.CategoryName)
+               @* @Html.DisplayNameFor(model => model.CategoryName)*@
+               CName
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Image)
+              @*  @Html.DisplayNameFor(model => model.Image)*@
+              Image
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Year)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Engine)
+             @*   @Html.DisplayNameFor(model => model.Engine)*@
+             Eng
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Loadcapacity)
+              @*  @Html.DisplayNameFor(model => model.Loadcapacity)*@
+                LCap
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Quantity)
+              @*  @Html.DisplayNameFor(model => model.Quantity)*@
+              Qntty
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
+               @* @Html.DisplayNameFor(model => model.Price)*@
+               $
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Description)
-            </th>
+                
+            </th>*@
             <th>
-                @Html.DisplayNameFor(model => model.Discount)
+               @* @Html.DisplayNameFor(model => model.Discount)*@
+               Discount
             </th>
             @if (this.User.Identity.IsAuthenticated)
             {
+                
                 <th>Order</th>
             }
             </tr>
@@ -106,9 +118,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Description)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Discount) %
             </td>

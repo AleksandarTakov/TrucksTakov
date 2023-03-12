@@ -51,6 +51,7 @@ namespace TrucksTakov
             services.AddTransient<ITruckService,TruckService>();
             services.AddTransient<ICategoryService,CategoryService>();
             services.AddTransient<IManufacturerService,ManufacturerService>();
+            services.AddTransient<IStatisticsService,StatisticsService>();
            
             services.AddControllersWithViews();
             services.AddRazorPages();

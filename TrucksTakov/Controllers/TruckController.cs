@@ -10,6 +10,7 @@ using TrucksTakov.Models.Manufacturer;
 using TrucksTakov.Domain;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authorization;
+using TrucksTakov.Services;
 
 namespace TrucksTakov.Controllers
 {
@@ -87,6 +88,30 @@ namespace TrucksTakov.Controllers
                 }).ToList();
             return this.View(trucks);
         }
+        [AllowAnonymous]
+        public ActionResult Tug()
+        { 
+            List<TruckIndexVM> trucks = _truckService.GetTrucks()
+            .Select(truck => new TruckIndexVM()
+            {
+                Id = truck.Id,
+                ManufacturerId = truck.ManufacturerId,
+                ManufacturerName = truck.Manufacturer.ManufacturerName,
+                CategoryId = truck.CategoryId,
+                CategoryName = truck.Category.CategoryName,
+                Image = truck.Image,
+                Year = truck.Year,
+                Engine = truck.Engine,
+                Loadcapacity = truck.Loadcapacity,
+                Quantity = truck.Quantity,
+                Price = truck.Price,
+                Description = truck.Description,
+                Discount = truck.Discount
+
+            }).Where(x => x.CategoryName == "Tug").ToList();
+
+            return this.View(trucks);
+        }
         public ActionResult Edit(int id)
         {
             Truck truck = _truckService.GetTruckById(id);
@@ -155,10 +180,10 @@ namespace TrucksTakov.Controllers
             {
                 Id = item.Id,
                 ManufacturerId = item.ManufacturerId,
-                ManufacturerName = item.ManufacturerName,
+                ManufacturerName = item.Manufacturer.ManufacturerName,
                 Model = item.Model,
                 CategoryId = item.CategoryId,
-                CategoryName = item.CategoryName,
+                CategoryName = item.Category.CategoryName,
                 Image = item.Image,
                 Year = item.Year,
                 Engine = item.Engine,

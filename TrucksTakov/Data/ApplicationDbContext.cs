@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using TrucksTakov.Domain;
 using TrucksTakov.Models.Truck;
+using TrucksTakov.Models.Client;
 
 namespace TrucksTakov.Data
 {
@@ -24,5 +25,7 @@ namespace TrucksTakov.Data
         public DbSet<TrucksTakov.Models.Truck.TruckEditVM> TruckEditVM { get; set; }
         public DbSet<TrucksTakov.Models.Truck.TruckDetailsVM> TruckDetailsVM { get; set; }
         public DbSet<TrucksTakov.Models.Truck.TruckDeleteVM> TruckDeleteVM { get; set; }
+        public DbSet<TrucksTakov.Models.Client.ClientIndexVM> ClientIndexVM { get; set; }
+        public DbSet<TrucksTakov.Models.Client.ClientDeleteVM> ClientDeleteVM { get; set; }
     }
 }
