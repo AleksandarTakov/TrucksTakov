@@ -97,6 +97,7 @@ namespace TrucksTakov.Controllers
                 Id = truck.Id,
                 ManufacturerId = truck.ManufacturerId,
                 ManufacturerName = truck.Manufacturer.ManufacturerName,
+                Model = truck.Model,
                 CategoryId = truck.CategoryId,
                 CategoryName = truck.Category.CategoryName,
                 Image = truck.Image,
@@ -109,6 +110,131 @@ namespace TrucksTakov.Controllers
                 Discount = truck.Discount
 
             }).Where(x => x.CategoryName == "Tug").ToList();
+
+            return this.View(trucks);
+        }
+        [AllowAnonymous]
+        public ActionResult Dumper()
+        {
+            List<TruckIndexVM> trucks = _truckService.GetTrucks()
+            .Select(truck => new TruckIndexVM()
+            {
+                Id = truck.Id,
+                ManufacturerId = truck.ManufacturerId,
+                ManufacturerName = truck.Manufacturer.ManufacturerName,
+                Model = truck.Model,
+                CategoryId = truck.CategoryId,
+                CategoryName = truck.Category.CategoryName,
+                Image = truck.Image,
+                Year = truck.Year,
+                Engine = truck.Engine,
+                Loadcapacity = truck.Loadcapacity,
+                Quantity = truck.Quantity,
+                Price = truck.Price,
+                Description = truck.Description,
+                Discount = truck.Discount
+
+            }).Where(x => x.CategoryName == "Dumper").ToList();
+
+            return this.View(trucks);
+        }
+        [AllowAnonymous]
+        public ActionResult RoadAssistance()
+        {
+            List<TruckIndexVM> trucks = _truckService.GetTrucks()
+            .Select(truck => new TruckIndexVM()
+            {
+                Id = truck.Id,
+                ManufacturerId = truck.ManufacturerId,
+                ManufacturerName = truck.Manufacturer.ManufacturerName,
+                Model = truck.Model,
+                CategoryId = truck.CategoryId,
+                CategoryName = truck.Category.CategoryName,
+                Image = truck.Image,
+                Year = truck.Year,
+                Engine = truck.Engine,
+                Loadcapacity = truck.Loadcapacity,
+                Quantity = truck.Quantity,
+                Price = truck.Price,
+                Description = truck.Description,
+                Discount = truck.Discount
+
+            }).Where(x => x.CategoryName == "RoadAssistance").ToList();
+
+            return this.View(trucks);
+        }
+        [AllowAnonymous]
+        public ActionResult Refrigerator()
+        {
+            List<TruckIndexVM> trucks = _truckService.GetTrucks()
+            .Select(truck => new TruckIndexVM()
+            {
+                Id = truck.Id,
+                ManufacturerId = truck.ManufacturerId,
+                ManufacturerName = truck.Manufacturer.ManufacturerName,
+                Model = truck.Model,
+                CategoryId = truck.CategoryId,
+                CategoryName = truck.Category.CategoryName,
+                Image = truck.Image,
+                Year = truck.Year,
+                Engine = truck.Engine,
+                Loadcapacity = truck.Loadcapacity,
+                Quantity = truck.Quantity,
+                Price = truck.Price,
+                Description = truck.Description,
+                Discount = truck.Discount
+
+            }).Where(x => x.CategoryName == "Refrigerator").ToList();
+
+            return this.View(trucks);
+        }
+        [AllowAnonymous]
+        public ActionResult Tank()
+        {
+            List<TruckIndexVM> trucks = _truckService.GetTrucks()
+            .Select(truck => new TruckIndexVM()
+            {
+                Id = truck.Id,
+                ManufacturerId = truck.ManufacturerId,
+                ManufacturerName = truck.Manufacturer.ManufacturerName,
+                Model = truck.Model,
+                CategoryId = truck.CategoryId,
+                CategoryName = truck.Category.CategoryName,
+                Image = truck.Image,
+                Year = truck.Year,
+                Engine = truck.Engine,
+                Loadcapacity = truck.Loadcapacity,
+                Quantity = truck.Quantity,
+                Price = truck.Price,
+                Description = truck.Description,
+                Discount = truck.Discount
+
+            }).Where(x => x.CategoryName == "Tank").ToList();
+
+            return this.View(trucks);
+        }
+        [AllowAnonymous]
+        public ActionResult Accessory()
+        {
+            List<TruckIndexVM> trucks = _truckService.GetTrucks()
+            .Select(truck => new TruckIndexVM()
+            {
+                Id = truck.Id,
+                ManufacturerId = truck.ManufacturerId,
+                ManufacturerName = truck.Manufacturer.ManufacturerName,
+                Model = truck.Model,
+                CategoryId = truck.CategoryId,
+                CategoryName = truck.Category.CategoryName,
+                Image = truck.Image,
+                Year = truck.Year,
+                Engine = truck.Engine,
+                Loadcapacity = truck.Loadcapacity,
+                Quantity = truck.Quantity,
+                Price = truck.Price,
+                Description = truck.Description,
+                Discount = truck.Discount
+
+            }).Where(x => x.CategoryName == "Accessory").ToList();
 
             return this.View(trucks);
         }

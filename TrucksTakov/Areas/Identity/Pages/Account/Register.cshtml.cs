@@ -64,6 +64,10 @@ namespace TrucksTakov.Areas.Identity.Pages.Account
             public string Email { get; set; }
 
             [Required]
+            [Display(Name = "Telephone")]
+            public string Telephone { get; set; }
+
+            [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
@@ -87,7 +91,7 @@ namespace TrucksTakov.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { FirstName = Input.FirstName, LastName = Input.LastName, Address = Input.Address, UserName = Input.UserName, Email = Input.Email };
+                var user = new ApplicationUser { FirstName = Input.FirstName, LastName = Input.LastName, Address = Input.Address, UserName = Input.UserName, Email = Input.Email, Telephone = Input.Telephone };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

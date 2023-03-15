@@ -30,6 +30,7 @@ namespace TrucksTakov.Controllers
                 LastName = u.LastName,
                 Address = u.Address,
                 Email = u.Email,
+                Telephone=u.Telephone,
             })
             .ToList();
 
@@ -62,11 +63,12 @@ namespace TrucksTakov.Controllers
             ClientDeleteVM userToDelete = new ClientDeleteVM()
             {
                 Id = user.Id,
+                UserName = user.UserName,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Address = user.Address,
                 Email = user.Email,
-                UserName = user.UserName
+                Telephone = user.Telephone
             };
             return View(userToDelete);
         }

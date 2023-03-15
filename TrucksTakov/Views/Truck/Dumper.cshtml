@@ -1,11 +1,12 @@
-﻿@using TrucksTakov.Models.Order;
+﻿
+@using TrucksTakov.Models.Order;
 @model IEnumerable<TrucksTakov.Models.Truck.TruckIndexVM>
 
 @{
-    ViewData["Title"] = "Tug Trucks";
+    ViewData["Title"] = "Dumper";
 }
 
-<center><h1>Tug</h1></center>
+<center><h1>Dumper</h1></center>
 <br />
 @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
 {
@@ -14,8 +15,8 @@
     </p>
 }
 <table class="table table-striped">
-<thead class="table-info">
-    
+    <thead class="table-info">
+
         <tr>
             <th>
                 @*  @Html.DisplayNameFor(model => model.ManufacturerName)*@
@@ -116,28 +117,28 @@
                 </td>
 
                 @if (this.User.Identity.IsAuthenticated)
-                    {
-                        <td>
-                            @await Html.PartialAsync("_OrderPartialView", new OrderConfirmVM
-                    {
-                    TruckId = item.Id
-                    })
-                        </td>
-                    }
+                {
                     <td>
-                        @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
-                        {
-                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                        }
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
-                        @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
-                        {
-                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                        }
+                        @await Html.PartialAsync("_OrderPartialView", new OrderConfirmVM
+                {
+                TruckId = item.Id
+                })
                     </td>
-                </tr>
-            }
-        </tbody>
+                }
+                <td>
+                    @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    }
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
     </thead>
 
 

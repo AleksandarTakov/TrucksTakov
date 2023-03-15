@@ -88,9 +88,9 @@ namespace TrucksTakov.Services
             { return false; }
            // product.TruckName = name;
 
-            truck.ManufacturerId = manufacturerId;
+            //truck.ManufacturerId = manufacturerId;
             truck.Model = model;
-            truck.CategoryId = categoryId;
+            //truck.CategoryId = categoryId;
 
             truck.Manufacturer = _context.Manufacturers.Find(manufacturerId);
             truck.Category = _context.Categories.Find(categoryId);

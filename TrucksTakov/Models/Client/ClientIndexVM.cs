@@ -21,6 +21,7 @@ namespace TrucksTakov.Models.Client
         public string Address { get; set; }
 
         public string Email { get; set; }
+        public string Telephone { get; set; }
 
         public bool IsAdmin { get; set; }
     }

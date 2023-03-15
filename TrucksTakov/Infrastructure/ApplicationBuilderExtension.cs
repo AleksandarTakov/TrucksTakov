@@ -76,10 +76,10 @@ namespace TrucksTakov.Infrastructure
             dataCategory.Categories.AddRange(new[]
             {
                 new Category{CategoryName="Dumper"},
-                new Category{CategoryName="Road assistance"},
-                new Category{CategoryName="Тug"},
-                new Category{CategoryName="Refrigerator Truck"},
-                new Category{CategoryName="Tank Truck"},
+                new Category{CategoryName="RoadAssistance"},
+                new Category{CategoryName="Tug"},
+                new Category{CategoryName="Refrigerator"},
+                new Category{CategoryName="Tank"},
                 new Category{CategoryName="Accessory"},
                 
             });
