@@ -2,10 +2,10 @@
 @model IEnumerable<TrucksTakov.Models.Truck.TruckIndexVM>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Trucks";
 }
 
-<h1>Index</h1>
+<center><h1>All Trucks </h1></center>
 @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
 {
     <p>

@@ -101,8 +101,7 @@ namespace TrucksTakov.Infrastructure
                 new Manufacturer{ManufacturerName="Volvo"},
                 new Manufacturer{ManufacturerName="Daf"},
                 new Manufacturer{ManufacturerName="Astra"},
-                new Manufacturer{ManufacturerName="Citroen"},
-                new Manufacturer{ManufacturerName="Mazda"},
+                
 
             });
             dataManufacturer.SaveChanges();
