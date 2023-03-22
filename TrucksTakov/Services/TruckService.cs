@@ -56,7 +56,7 @@ namespace TrucksTakov.Services
             if (!String.IsNullOrEmpty(searchStringCategoryName) && !String.IsNullOrEmpty(searchStringManufacturerName))
             {
                 trucks = trucks.Where(x => x.Category.CategoryName.ToLower().Contains(searchStringCategoryName.ToLower())
-                && x.Manufacturer.ManufacturerName.ToLower().Contains(searchStringManufacturerName)).ToList();
+                && x.Manufacturer.ManufacturerName.ToLower().Contains(searchStringManufacturerName.ToLower())).ToList();
             }
             else if (!String.IsNullOrEmpty(searchStringCategoryName))
             {
@@ -64,7 +64,7 @@ namespace TrucksTakov.Services
             }
             else if (!String.IsNullOrEmpty(searchStringManufacturerName))
             {
-                trucks = trucks.Where(x => x.Manufacturer.ManufacturerName.ToLower().Contains(searchStringManufacturerName)).ToList();
+                trucks = trucks.Where(x => x.Manufacturer.ManufacturerName.ToLower().Contains(searchStringManufacturerName.ToLower())).ToList();
             }
 
             return trucks;

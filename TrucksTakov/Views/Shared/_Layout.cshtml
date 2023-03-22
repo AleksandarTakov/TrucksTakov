@@ -43,6 +43,7 @@
                                 <a class="dropdown-item" asp-controller="Truck" asp-action="Index">
                                     All Trucks
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket2" viewBox="0 0 16 16">
+                                        </svg>
                                         
                                 </a>
 
@@ -188,10 +189,28 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+   @* <video autoplay muted loop id="myVideo">
+        <source src="~/Picture/put.mp4" type="video/mp4">
+    </video>
     <style>
-        body {
-            background-color: white;
-        }
-    </style>
+    #myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    }
+
+    /* Add text on top of video */
+    .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: white;
+    }
+    </style>*@
 </body>
 </html>

@@ -65,9 +65,9 @@ namespace TrucksTakov.Controllers
             return View();
         }
         [AllowAnonymous]
-        public ActionResult Index(string searchStringCategoryName, string searchStringManufacturerName)
+        public ActionResult Index(string searchStringCategoryName,string searchStringManufacturerName)
         {
-            List<TruckIndexVM> trucks = _truckService.GetTrucks(searchStringCategoryName, searchStringManufacturerName)
+            List<TruckIndexVM> trucks = _truckService.GetTrucks(searchStringCategoryName,searchStringManufacturerName)
                 .Select(truck => new TruckIndexVM
                 {
                     Id = truck.Id,

@@ -10,7 +10,7 @@ namespace TrucksTakov.Abstraction
             List<Truck> GetTrucks();
             Truck GetTruckById(int truckId);
             bool RemoveById(int truckId);
-            List<Truck> GetTrucks(string searchStringCategoryName, string searchStringManufacturerName);
+            List<Truck> GetTrucks( string searchStringCategoryName,string searchStringManufacturerName);
     
     }
     }
