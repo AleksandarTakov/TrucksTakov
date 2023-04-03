@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
@@ -17,6 +17,7 @@ using TrucksTakov.Infrastructure;
 using static TrucksTakov.Abstraction.IManufacturerService;
 using TrucksTakov.Services;
 using TrucksTakov.Abstraction;
+using System.Text;
 
 namespace TrucksTakov
 {
@@ -48,11 +49,11 @@ namespace TrucksTakov
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
-            services.AddTransient<ITruckService,TruckService>();
-            services.AddTransient<ICategoryService,CategoryService>();
-            services.AddTransient<IManufacturerService,ManufacturerService>();
-            services.AddTransient<IStatisticsService,StatisticsService>();
-           
+            services.AddTransient<ITruckService, TruckService>();
+            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IManufacturerService, ManufacturerService>();
+            services.AddTransient<IStatisticsService, StatisticsService>();
+
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.Configure<IdentityOptions>(option =>
@@ -70,7 +71,7 @@ namespace TrucksTakov
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-             app.PrepareDatabase();
+            app.PrepareDatabase();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -97,6 +98,20 @@ namespace TrucksTakov
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+            {
+                string[] frazi = { "Камионът е отличен.", "Това е страхотен сайт.", "Давам 10/10, невероятно.", "Чудесен дизайн,отлични фънкции." };
+                string[] sluchki = { "Харесаха ми филтрите,с тях лесно намерих желания камион.", "Направен е чудесно,всеки може да си поръча!.", "Много по-добър от останалите сайтове за камиони.", "Не мога да повярвам,че намерих толкова практичен сайт!.", "Опитайте и вие.Невероятно!." };
+                string[] ime1 = { "Симона", "Елена", "Стела", "Наталия", "Анджелина" };
+                string[] ime2 = { "Иванова", "Петрова", "Кирова" };
+                string[] grad = { "София", "Перник", "Варна", "Русе", "Бургас" };
+
+                Random r = new Random();
+
+                StringBuilder asd = new StringBuilder();
+                asd.Append($"{frazi[r.Next(0, frazi.Length)]} {sluchki[r.Next(0, sluchki.Length)]} - {ime1[r.Next(0, ime1.Length)]}, {grad[r.Next(0, grad.Length)]}");
+
+                Console.WriteLine(asd.ToString());
+            }
         }
     }
 }

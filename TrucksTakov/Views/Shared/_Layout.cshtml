@@ -43,44 +43,39 @@
                                 <a class="dropdown-item" asp-controller="Truck" asp-action="Index">
                                     All Trucks
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket2" viewBox="0 0 16 16">
-                                        </svg>
-                                        
+                                    </svg>
+
                                 </a>
 
                                 <a class="dropdown-item" asp-controller="Truck" asp-action="Dumper">
                                     Dumper
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
-                                       
                                     </svg>
                                 </a>
 
                                 <a class="dropdown-item" asp-controller="Truck" asp-action="RoadAssistance">
                                     RoadAssistance
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
-                                        </svg>
+                                    </svg>
                                 </a>
                                 <a class="dropdown-item" asp-controller="Truck" asp-action="Tug">
                                     Tug
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
-                                        
                                     </svg>
                                 </a>
                                 <a class="dropdown-item" asp-controller="Truck" asp-action="Refrigerator">
                                     Refrigerator
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
-                                        
                                     </svg>
                                 </a>
-                                 <a class="dropdown-item" asp-controller="Truck" asp-action="Tank">
+                                <a class="dropdown-item" asp-controller="Truck" asp-action="Tank">
                                     Tank
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
-                                       </svg>
+                                    </svg>
                                 </a>
                                 <a class="dropdown-item" asp-controller="Truck" asp-action="Accessory">
                                     Accessory
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-heart" viewBox="0 0 16 16">
-                                      
-                                       
                                     </svg>
                                 </a>
                             </div>
@@ -114,7 +109,8 @@
                             </a>
                         </li>
                     }
-                    
+                    @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
+                    {
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Index">
                                 Orders
@@ -123,7 +119,8 @@
                                 </svg>
                             </a>
                         </li>
-                         @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
+                    }
+                    @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
                     {
                         <li class="nav-item active">
                             <div class="dropdown show">
@@ -168,7 +165,7 @@
                     }
 
                 </ul>
-                                    
+
                 <partial name="_LoginPartial" />
             </div>
 
@@ -189,8 +186,8 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-   @* <video autoplay muted loop id="myVideo">
-        <source src="~/Picture/put.mp4" type="video/mp4">
+    @* <video autoplay muted loop id="myVideo">
+    <source src="~/Picture/put.mp4" type="video/mp4">
     </video>
     <style>
     #myVideo {
@@ -201,7 +198,6 @@
     min-height: 100%;
     z-index: -1;
     }
-
     /* Add text on top of video */
     .content {
     position: absolute;
@@ -214,3 +210,4 @@
     </style>*@
 </body>
 </html>
+
