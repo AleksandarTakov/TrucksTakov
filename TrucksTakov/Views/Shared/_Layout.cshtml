@@ -2,7 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+     
+        media screen and (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .content {
+    width: 100%;
+  }
+}
+    </style>
     <title>@ViewData["Title"] - TrucksTakov</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
@@ -10,7 +44,13 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TrucksTakov</a>
+            <img class="logo" src="~/Picture/logo-fotor-bg-remover-20230418173527.png" alt="Logo">
+            <style>
+                .logo {
+                    width: 150px;
+                    height: fit-content;
+                }
+            </style>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

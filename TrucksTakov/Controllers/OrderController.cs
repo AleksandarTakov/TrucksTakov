@@ -26,6 +26,7 @@ namespace TrucksTakov.Controllers
 
         public ActionResult Index()
         {
+
             string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var user = _context.Users.SingleOrDefault(u => u.Id == userId);
             List<OrderIndexVM> orders = _context.Orders.Select(x => new OrderIndexVM
