@@ -90,7 +90,7 @@ namespace TrucksTakov.Controllers
         }
         [AllowAnonymous]
         public ActionResult Tug()
-        { 
+        {
             List<TruckIndexVM> trucks = _truckService.GetTrucks()
             .Select(truck => new TruckIndexVM()
             {
@@ -112,7 +112,8 @@ namespace TrucksTakov.Controllers
             }).Where(x => x.CategoryName == "Tug").ToList();
 
             return this.View(trucks);
-        }
+        
+    }
         [AllowAnonymous]
         public ActionResult Dumper()
         {

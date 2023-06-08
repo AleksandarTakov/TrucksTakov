@@ -12,8 +12,6 @@ namespace TrucksTakov.Models.Truck
         [Key]
         public int Id { get; set; }
 
-        
-
         public int ManufacturerId { get; set; }
         [Display(Name = "Manufacturer")]
         public string ManufacturerName { get; set; }
